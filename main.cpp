@@ -6,7 +6,9 @@
 #include <random>
 //
 #define X 1
-#define Y 7
+#define Y 14
+#define APPLE_SPACE_X 45
+#define APPLE_SPACE_Y 14
 
 struct Player {
     int x;
@@ -27,15 +29,22 @@ int main(int agrc, char** argv) {
     int appleX, appleY;
 
     std::vector<std::string> vfxArr = {
-        "################################",
-        "#                              #",
-        "#                              #",
-        "#                              #",
-        "#                              #",
-        "#                              #",
-        "#                              #",
-        "#                              #",
-        "################################"
+        "###############################################",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "#                                             #",
+        "###############################################"
     };
     vfxArr[player.y][player.x] = '0';
     int count = 0; int max = 2;
@@ -45,8 +54,8 @@ int main(int agrc, char** argv) {
     // Randomizer
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> distribX(1, 30);
-    std::uniform_int_distribution<int> distribY(1, 7);
+    std::uniform_int_distribution<int> distribX(1, APPLE_SPACE_X);
+    std::uniform_int_distribution<int> distribY(1, APPLE_SPACE_Y);
 
     auto randomizer = [&]() {
         while (true) {
