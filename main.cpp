@@ -4,7 +4,7 @@
 #include <Windows.h>
 #include <conio.h>
 #include <random>
-
+//
 #define X 1
 #define Y 7
 
